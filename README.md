@@ -1,3 +1,6 @@
+> [!IMPORTANT]
+> This repository is a fork of [clearbluejar/pyghidra-mcp](https://github.com/clearbluejar/pyghidra-mcp). Thanks to the original maintainers for their work.
+
 <p align="center">
   <img src="https://github.com/user-attachments/assets/31c1831a-5be1-4698-8171-5ebfc9d6797c" width=60% >
 </p>
@@ -9,10 +12,6 @@
 </p>
 
 # PyGhidra-MCP - Ghidra Model Context Protocol Server
-
-> [!IMPORTANT]
-> This repository is a fork of [clearbluejar/pyghidra-mcp](https://github.com/clearbluejar/pyghidra-mcp). Thanks to the original maintainers for their work.
-
 
 ### Overview
 
