@@ -3,12 +3,15 @@
 </p>
 
 <p align="center">
-  <img align="center" alt="GitHub Workflow Status (with event)" src="https://img.shields.io/github/actions/workflow/status/clearbluejar/pyghidra-mcp/pytest-devcontainer-repo-all.yml?style=for-the-badge&label=pytest">
+  <img align="center" alt="GitHub Workflow Status (with event)" src="https://img.shields.io/github/actions/workflow/status/autopwn-de/ghidra-python/pytest-devcontainer-repo-all.yml?style=for-the-badge&label=pytest">
   <img align="center" alt="PyPI - Downloads" src="https://img.shields.io/pypi/dm/pyghidra-mcp?color=yellow&label=PyPI%20downloads&style=for-the-badge">
-  <img align="center" src="https://img.shields.io/github/stars/clearbluejar/pyghidra-mcp?style=for-the-badge">
+  <img align="center" src="https://img.shields.io/github/stars/autopwn-de/ghidra-python?style=for-the-badge">
 </p>
 
 # PyGhidra-MCP - Ghidra Model Context Protocol Server
+
+> [!IMPORTANT]
+> This repository is a fork of [clearbluejar/pyghidra-mcp](https://github.com/clearbluejar/pyghidra-mcp). Thanks to the original maintainers for their work.
 
 
 ### Overview
@@ -238,10 +241,10 @@ uvx pyghidra-mcp \
 > [!IMPORTANT]
 > `--gui` launches Ghidra through `pyghidra-mcp`. It does not attach to an already-running external Ghidra instance.
 
-Or, run as a [Docker container](https://ghcr.io/clearbluejar/pyghidra-mcp):
+Or, run as a [Docker container](https://ghcr.io/autopwn-de/ghidra-python):
 
 ```bash
-docker run -i --rm ghcr.io/clearbluejar/pyghidra-mcp -t stdio
+docker run -i --rm ghcr.io/autopwn-de/ghidra-python -t stdio
 ```
 
 ## Optimized for Agents
@@ -611,7 +614,7 @@ cp /path/to/your/binaries/* ./binaries/
 # Run the Docker container with volume mapping
 docker run -i --rm \
   -v "$(pwd)/binaries:/binaries" \
-  ghcr.io/clearbluejar/pyghidra-mcp \
+  ghcr.io/autopwn-de/ghidra-python \
   /binaries/*
 ```
 
@@ -637,7 +640,7 @@ uvx mcpo -- \
 You can combine mcpo with Docker:
 
 ```bash
-uvx mcpo -- docker run -i --rm ghcr.io/clearbluejar/pyghidra-mcp /bin/ls
+uvx mcpo -- docker run -i --rm ghcr.io/autopwn-de/ghidra-python /bin/ls
 ```
 
 ### Standard Input/Output (stdio)
@@ -654,10 +657,10 @@ By default, the Python package will run in `stdio` mode. Because it's using the 
 
 #### Docker
 
-This server is published to GitHub's Container Registry ([ghcr.io/clearbluejar/pyghidra-mcp](http://ghcr.io/clearbluejar/pyghidra-mcp))
+This server is published to GitHub's Container Registry ([ghcr.io/autopwn-de/ghidra-python](http://ghcr.io/autopwn-de/ghidra-python))
 
 ```
-docker run -i --rm ghcr.io/clearbluejar/pyghidra-mcp -t stdio
+docker run -i --rm ghcr.io/autopwn-de/ghidra-python -t stdio
 ```
 
 By default, the Docker container starts the `streamable-http` server, so include `-t stdio` after the image name and run with `-i` for [interactive](https://docs.docker.com/reference/cli/docker/container/run/#interactive) stdio mode.
@@ -688,7 +691,7 @@ pyghidra-mcp \
 #### Docker
 
 ```
-docker run -p 8000:8000 ghcr.io/clearbluejar/pyghidra-mcp
+docker run -p 8000:8000 ghcr.io/autopwn-de/ghidra-python
 ```
 
 ### Server-sent events (SSE)
@@ -711,7 +714,7 @@ By default, the Python package will run in `stdio` mode, so you will have to inc
 #### Docker
 
 ```
-docker run -p 8000:8000 ghcr.io/clearbluejar/pyghidra-mcp -t sse
+docker run -p 8000:8000 ghcr.io/autopwn-de/ghidra-python -t sse
 ```
 
 ## Integrations
@@ -730,7 +733,7 @@ Add the following JSON block to your `claude_desktop_config.json` file:
             "command": "uvx",
             "args": [
                 "--from",
-                "git+https://github.com/clearbluejar/pyghidra-mcp",
+                "git+https://github.com/autopwn-de/ghidra-python",
                 "pyghidra-mcp",
                 "--project-path",
                 "/tmp/pyghidra", // or path to writeable directory
